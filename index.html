@@ -203,9 +203,16 @@
     <!-- Custom scripts for all pages-->
     <script src="resources/js/sb-admin-2.min.js"></script>
 
+
+
     <script src="models/api.js"></script>
     <script>
+        $(document).on('click', '.fav-button', function() {
+            alert('aa');
+        });
+
         $(document).ready(function() {
+
             $("#search").submit(function(event) {
                 var query = $("#search-query").val();
 
@@ -220,32 +227,34 @@
 
                 for (i = 0; i < results.hits.length; i++) {
                     $('#content-results').append(`
-                    
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <a href="` + results.hits[i].recipe.url + `">
+                        <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-warning shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div>
-                                            <img class="img-circle" style="border-radius: 50%; max-width: 70px" 
-                                                src="` + results.hits[i].recipe.image + `">
+                                            <a href="` + results.hits[i].recipe.url + `">
+                                                <img class="img-circle" style="border-radius: 50%; max-width: 70px" 
+                                                    src="` + results.hits[i].recipe.image + `">
+                                            </a>
                                         </div>
                                         <div style="padding-left: 20px" class="col mr-2">
-                                            <div class="small font-weight-bold text-primary mb-1">
-                                                ` + results.hits[i].recipe.label.slice(0, 20) + (results.hits[i].recipe.label.length > 20 ? "..." : "") + `
+                                            <a href="` + results.hits[i].recipe.url + `">
+                                                <div class="small font-weight-bold text-primary mb-1">
+                                                    ` + results.hits[i].recipe.label.slice(0, 20) + (results.hits[i].recipe.label.length > 20 ? "..." : "") + `
+                                                </div>
+                                            </a>
+                                            <div class="small text-right mb-auto">
+                                                <button id="fav-item-` + i + `" class="btn btn-default fav-button">
+                                                    <i class="fas fa-heart fa-1x fa-sm text-muted"></i>
+                                                </button>
                                             </div>
-
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                    
+                        </div>
                     `)
                 }
-
                 event.preventDefault();
             });
         });
