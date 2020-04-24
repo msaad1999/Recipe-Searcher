@@ -129,8 +129,6 @@
                     <!-- Content Row -->
                     <div class="row">
 
-                        <!-- Earnings (Monthly) Card Example -->
-
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
@@ -143,28 +141,19 @@
                                             <div class=" font-weight-bold text-primary text-uppercase mb-1">Shopping Cart</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
-
-                        <!-- Earnings (Monthly) Card Example -->
-
-
 
                     </div>
 
                     <!-- Content Row -->
 
-                    <div class="row">
+                    <div class="row" id="content-results">
 
                         <!-- Recipee code which needs to be duplicated and loaded with data -->
-
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <!-- <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-success shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -179,108 +168,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div>
-                                            <img class="img-circle" style="border-radius: 50%; max-width: 70px" src="img/burger.png">
-                                        </div>
-                                        <div style="padding-left: 20px" class="col mr-2">
-                                            <div class=" font-weight-bold text-primary text-uppercase mb-1">Recipee Name</div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div>
-                                            <img class="img-circle" style="border-radius: 50%; max-width: 70px" src="img/burger.png">
-                                        </div>
-                                        <div style="padding-left: 20px" class="col mr-2">
-                                            <div class=" font-weight-bold text-primary text-uppercase mb-1">Recipee Name</div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div>
-                                            <img class="img-circle" style="border-radius: 50%; max-width: 70px" src="img/burger.png">
-                                        </div>
-                                        <div style="padding-left: 20px" class="col mr-2">
-                                            <div class=" font-weight-bold text-primary text-uppercase mb-1">Recipee Name</div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div>
-                                            <img class="img-circle" style="border-radius: 50%; max-width: 70px" src="img/burger.png">
-                                        </div>
-                                        <div style="padding-left: 20px" class="col mr-2">
-                                            <div class=" font-weight-bold text-primary text-uppercase mb-1">Recipee Name</div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div>
-                                            <img class="img-circle" style="border-radius: 50%; max-width: 70px" src="img/burger.png">
-                                        </div>
-                                        <div style="padding-left: 20px" class="col mr-2">
-                                            <div class=" font-weight-bold text-primary text-uppercase mb-1">Recipee Name</div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div>
-                                            <img class="img-circle" style="border-radius: 50%; max-width: 70px" src="img/burger.png">
-                                        </div>
-                                        <div style="padding-left: 20px" class="col mr-2">
-                                            <div class=" font-weight-bold text-primary text-uppercase mb-1">Recipee Name</div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </div> -->
 
                     </div>
-
-
-
 
                 </div>
                 <!-- /.container-fluid -->
@@ -324,10 +214,39 @@
 
 
                 console.log(results.hits);
-                // console.log(Object.keys(results.hits).length);
+                console.log(results.hits.length);
 
+                $('#content-results').empty();
 
-                event.preventDefault()
+                for (i = 0; i < results.hits.length; i++) {
+                    $('#content-results').append(`
+                    
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <a href="` + results.hits[i].recipe.url + `">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div>
+                                            <img class="img-circle" style="border-radius: 50%; max-width: 70px" 
+                                                src="` + results.hits[i].recipe.image + `">
+                                        </div>
+                                        <div style="padding-left: 20px" class="col mr-2">
+                                            <div class="small font-weight-bold text-primary mb-1">
+                                                ` + results.hits[i].recipe.label.slice(0, 20) + (results.hits[i].recipe.label.length > 20 ? "..." : "") + `
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    `)
+                }
+
+                event.preventDefault();
             });
         });
     </script>
