@@ -1,6 +1,6 @@
-const API_CALL = "https://api.edamam.com/search";
-const APP_ID = "707b0925";
-const APP_KEY = "56c065dbb92734af43a553f50c3b0b97";
+var API_CALL = "https://api.edamam.com/search";
+var APP_ID = "707b0925";
+var APP_KEY = "56c065dbb92734af43a553f50c3b0b97";
 
 function search(query) {
     var url =
