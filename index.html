@@ -47,19 +47,12 @@
                     <span>Dashboard</span></a>
             </li>
 
-
-
-
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="cart.html">
                     <i class="fas fa-fw fa-shopping-cart"></i>
                     <span>My Shopping Cart</span></a>
             </li>
-
-
-
-
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -68,7 +61,6 @@
 
         </ul>
         <!-- End of Sidebar -->
-
 
 
         <!-- Content Wrapper -->
@@ -86,11 +78,11 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <form id="search" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <input id="search-query" type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
+                                <button class="btn btn-primary" type="submit">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
@@ -112,8 +104,8 @@
                                         <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
                                         </div>
                                     </div>
                                 </form>
@@ -138,6 +130,7 @@
                     <div class="row">
 
                         <!-- Earnings (Monthly) Card Example -->
+
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
@@ -145,10 +138,12 @@
                                         <div class="col-auto">
                                             <i class="fas fa-shopping-cart fa-2x text-gray-300"></i>
                                         </div>
-                                        <div style="padding-left: 20px" class="col mr-2">
-                                            <div class=" font-weight-bold text-primary text-uppercase mb-1">Shopping List</div>
+
+                                        <div href="cart.html" style="padding-left: 20px" class="col mr-2">
+                                            <div class=" font-weight-bold text-primary text-uppercase mb-1">Shopping Cart</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
                                         </div>
+
 
                                     </div>
                                 </div>
@@ -167,55 +162,125 @@
 
                     <div class="row">
 
-                        <!-- Area Chart -->
-                        <div class="col-xl-12 col-lg-12">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Results</h6>
-                                </div>
-                                <!-- Card Body -->
-                                <div style="margin:0 auto" class=" col-xl-12 row card-body">
-                                    <div style="margin:10px" class="card mb-4 py-3 border-bottom-success">
-                                        <div class="card resCard">
-                                            <img class="cardImg" src="img/burger.png" href="#" alt="recipe pic" />
-                                        </div>
-                                        <span style="text-align: center; padding:10px 10px 0px 10px"><strong>Recipe Name</strong></span>
-                                    </div>
-                                    <div style="margin:10px" class="card mb-4 py-3 border-bottom-success">
-                                        <div class="card resCard">
-                                            <img class="cardImg" src="img/burger.png" href="#" alt="recipe pic" />
-                                        </div>
-                                        <span style="text-align: center; padding:10px 10px 0px 10px"><strong>Recipe Name</strong></span>
-                                    </div>
-                                    <div style="margin:10px" class="card mb-4 py-3 border-bottom-success">
-                                        <div class="card resCard">
-                                            <img class="cardImg" src="img/burger.png" href="#" alt="recipe pic" />
-                                        </div>
-                                        <span style="text-align: center; padding:10px 10px 0px 10px"><strong>Recipe Name</strong></span>
-                                    </div>
-                                    <div style="margin:10px" class="card mb-4 py-3 border-bottom-success">
-                                        <div class="card resCard">
-                                            <img class="cardImg" src="img/burger.png" href="#" alt="recipe pic" />
-                                        </div>
-                                        <span style="text-align: center; padding:10px 10px 0px 10px"><strong>Recipe Name</strong></span>
-                                    </div>
-                                    <div style="margin:10px" class="card mb-4 py-3 border-bottom-success">
-                                        <div class="card resCard">
-                                            <img class="cardImg" src="img/burger.png" href="#" alt="recipe pic" />
-                                        </div>
-                                        <span style="text-align: center; padding:10px 10px 0px 10px"><strong>Recipe Name</strong></span>
-                                    </div>
+                        <!-- Recipee code which needs to be duplicated and loaded with data -->
 
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div>
+                                            <img class="img-circle" style="border-radius: 50%; max-width: 70px" src="img/burger.png">
+                                        </div>
+                                        <div style="padding-left: 20px" class="col mr-2">
+                                            <div class=" font-weight-bold text-primary text-uppercase mb-1">Recipee Name</div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div>
+                                            <img class="img-circle" style="border-radius: 50%; max-width: 70px" src="img/burger.png">
+                                        </div>
+                                        <div style="padding-left: 20px" class="col mr-2">
+                                            <div class=" font-weight-bold text-primary text-uppercase mb-1">Recipee Name</div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div>
+                                            <img class="img-circle" style="border-radius: 50%; max-width: 70px" src="img/burger.png">
+                                        </div>
+                                        <div style="padding-left: 20px" class="col mr-2">
+                                            <div class=" font-weight-bold text-primary text-uppercase mb-1">Recipee Name</div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div>
+                                            <img class="img-circle" style="border-radius: 50%; max-width: 70px" src="img/burger.png">
+                                        </div>
+                                        <div style="padding-left: 20px" class="col mr-2">
+                                            <div class=" font-weight-bold text-primary text-uppercase mb-1">Recipee Name</div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div>
+                                            <img class="img-circle" style="border-radius: 50%; max-width: 70px" src="img/burger.png">
+                                        </div>
+                                        <div style="padding-left: 20px" class="col mr-2">
+                                            <div class=" font-weight-bold text-primary text-uppercase mb-1">Recipee Name</div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div>
+                                            <img class="img-circle" style="border-radius: 50%; max-width: 70px" src="img/burger.png">
+                                        </div>
+                                        <div style="padding-left: 20px" class="col mr-2">
+                                            <div class=" font-weight-bold text-primary text-uppercase mb-1">Recipee Name</div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div>
+                                            <img class="img-circle" style="border-radius: 50%; max-width: 70px" src="img/burger.png">
+                                        </div>
+                                        <div style="padding-left: 20px" class="col mr-2">
+                                            <div class=" font-weight-bold text-primary text-uppercase mb-1">Recipee Name</div>
+
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-
-
-
-
                     </div>
+
+
+
 
                 </div>
                 <!-- /.container-fluid -->
@@ -247,6 +312,25 @@
 
     <!-- Custom scripts for all pages-->
     <script src="resources/js/sb-admin-2.min.js"></script>
+
+    <script src="models/api.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#search").submit(function(event) {
+                var query = $("#search-query").val();
+
+
+                var results = JSON.parse(search(query));
+
+
+                console.log(results.hits);
+                // console.log(Object.keys(results.hits).length);
+
+
+                event.preventDefault()
+            });
+        });
+    </script>
 
 </body>
 
